@@ -1025,14 +1025,16 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .toc li::before { content: counter(t, decimal-leading-zero); font-family: var(--hand); font-size: 20px; color: var(--mk); font-weight: 600; }
 .toc a:hover { text-decoration: underline; text-decoration-color: var(--mk); text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
-/* Software-Block: Violett von rev2.at, als bewusster Bruch */
+/* Software-Block: weiß, Violett von rev2.at nur in Eyebrow, Welle und Button */
 :root { --vio: #6b5cff; --vio-hover: #5949f2; --vio-text: #a99fff; }
-.band.software { background: #0a0c12; border-top: 1px solid #2a2652; }
-.band.software .eyebrow { color: var(--vio-text); }
+.band.software { background: var(--paper); color: var(--ink); }
+.band.software .eyebrow { color: var(--vio); }
 .band.software .eyebrow::before { background: var(--vio); }
 .btn-vio { background: var(--vio); color: #fff; }
 .btn-vio:hover { background: var(--vio-hover); }
 .band.software .partner-cta .h2 { max-width: 22ch; }
+.ul.vio::after { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'><path d='M2 9 C 40 3, 90 12, 130 7 S 180 5, 198 8' fill='none' stroke='%236b5cff' stroke-width='5' stroke-linecap='round'/></svg>"); }
+@media (max-width: 359px) { .ul.vio { text-decoration-color: var(--vio); } }
 
 /* Logo mit Wortmarke „marketing" */
 .brand img { height: 32px; width: auto; }
