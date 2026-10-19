@@ -14,7 +14,7 @@ import re, pathlib, datetime
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src" / "pages"
-VERSION = "6"
+VERSION = "7"
 SITE = "https://rev2-marketing.at"
 
 ICON_BARS = '<svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -27,7 +27,7 @@ NAV_ITEMS = [
     ("kontakt", "/kontakt", "Kontakt"),
 ]
 
-BRAND = '<a class="brand" href="/" aria-label="Rev2 Marketing, zur Startseite"><img src="/assets/rev2-white.png" alt="rev2" width="86" height="37"><span class="mk">marketing</span></a>'
+BRAND = '<a class="brand" href="/" aria-label="Rev2 Marketing, zur Startseite"><img src="/assets/rev2-marketing-white.png" alt="rev2 marketing" width="1000" height="223"></a>'
 
 
 def header(active):

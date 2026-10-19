@@ -1033,3 +1033,8 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .btn-vio { background: var(--vio); color: #fff; }
 .btn-vio:hover { background: var(--vio-hover); }
 .band.software .partner-cta .h2 { max-width: 22ch; }
+
+/* Logo mit Wortmarke „marketing" */
+.brand img { height: 32px; width: auto; }
+.footer .brand img { height: 34px; }
+@media (max-width: 599px) { .brand img { height: 27px; } }

@@ -32,4 +32,4 @@ Seiten: `/`, `/leistungen`, `/cases`, `/kontakt`, `/impressum`, `/datenschutz`, 
 - Calendly: aktuell ist das Profil `calendly.com/max-rev2` verlinkt, besser ein eigener Termintyp für Marketing
 - AI-Content-Unterseite kommt später, wenn es Referenzen gibt (vorerst nur als Leistung unter /leistungen#ai)
 - Instagram-Link im Footer prüfen
-- OG-Bild `assets/og-rev2-marketing.jpg` (1200×630) anlegen
+- OG-Bild liegt unter `assets/og-rev2-marketing.jpg` (Logo auf Dunkel), bei Bedarf gegen ein Foto tauschen

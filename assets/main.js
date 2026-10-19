@@ -19,7 +19,7 @@
     var light = !!(band && (band.classList.contains("light") || band.classList.contains("light-2")));
     if (light !== nav.classList.contains("light")) {
       nav.classList.toggle("light", light);
-      if (logo) logo.src = light ? "/assets/rev2-black.png" : "/assets/rev2-white.png";
+      if (logo) logo.src = light ? "/assets/rev2-marketing-black.png" : "/assets/rev2-marketing-white.png";
     }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
