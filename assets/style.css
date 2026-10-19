@@ -1094,3 +1094,17 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .legal h1 { overflow-wrap: anywhere; }
 @media (max-width: 599px) { .legal h1 { font-size: clamp(28px, 8.4vw, 40px); } .legal .block { min-width: 0; } }
 .case-grid, .ai-grid { grid-auto-flow: dense; }
+
+/* Revel: Fotos und Referenzlogos */
+.revel .visuals .ph img { position: absolute; inset: 0; }
+.revel .visuals .ph::before { content: none; }
+.clients { margin-top: clamp(40px, 6vw, 64px); padding: 26px 28px; border-radius: var(--radius); background: #f3f0e7; color: #1a1a1a; display: grid; gap: 22px; align-items: center; }
+@media (min-width: 900px) { .clients { grid-template-columns: 200px 1fr; gap: 40px; } }
+.clients-lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.clients ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 24px; align-items: center; justify-items: center; }
+@media (min-width: 700px) { .clients ul { grid-template-columns: repeat(5, 1fr); gap: 24px 32px; } }
+.clients li { display: grid; place-items: center; width: 100%; }
+.clients img { max-height: 64px; max-width: 160px; width: auto; height: auto; mix-blend-mode: multiply; }
+.clients li { min-width: 0; }
+.clients img { max-width: 100%; }
+@media (max-width: 699px) { .clients { padding: 22px 18px; } .clients ul { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; } .clients img { max-height: 52px; max-width: 120px; } }
