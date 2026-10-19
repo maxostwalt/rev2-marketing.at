@@ -14,7 +14,7 @@ import re, pathlib, datetime
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src" / "pages"
-VERSION = "5"
+VERSION = "6"
 SITE = "https://rev2-marketing.at"
 
 ICON_BARS = '<svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -23,7 +23,6 @@ ICON_X = '<svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" s
 NAV_ITEMS = [
     ("leistungen", "/leistungen", "Leistungen"),
     ("cases", "/cases", "Cases"),
-    ("ai", "/ai", "AI Content"),
     ("ueber", "/#wir", "Über uns"),
     ("kontakt", "/kontakt", "Kontakt"),
 ]
@@ -68,11 +67,14 @@ FOOTER_FULL = f'''<footer class="footer">
       <div>
         <h4>Leistungen</h4>
         <ul>
-          <li><a href="/leistungen#content">Content-Produktion</a></li>
           <li><a href="/leistungen#social">Social Media Management</a></li>
-          <li><a href="/leistungen#performance">Performance Marketing</a></li>
+          <li><a href="/leistungen#content">Content-Produktion</a></li>
+          <li><a href="/leistungen#foto">Fotografie</a></li>
           <li><a href="/leistungen#employer">Employer Branding</a></li>
-          <li><a href="/ai">AI Content</a></li>
+          <li><a href="/leistungen#branding">Branding und Bildsprache</a></li>
+          <li><a href="/leistungen#performance">Performance Marketing</a></li>
+          <li><a href="/leistungen#ai">AI Content</a></li>
+          <li><a href="/leistungen#web">Web und E-Commerce</a></li>
         </ul>
       </div>
       <div>
@@ -179,7 +181,7 @@ def build():
     today = datetime.date.today().isoformat()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for p in pages:
-        pri = "1.0" if p == "/" else ("0.9" if p in ("/leistungen", "/cases", "/ai") else "0.6")
+        pri = "1.0" if p == "/" else ("0.9" if p in ("/leistungen", "/cases") else "0.6")
         sm.append(f"  <url><loc>{SITE}{'' if p == '/' else p}</loc><lastmod>{today}</lastmod><priority>{pri}</priority></url>")
     sm.append("</urlset>")
     (ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n", encoding="utf-8")

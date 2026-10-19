@@ -10,7 +10,7 @@ Website von Rev2 Marketing, der Agenturmarke der Rev2 Innovations GmbH. Gleiche 
 - `assets/main.js`: Navigation, Reveal, Formulare, Calendly, dazu Video-Einbettung beim Klick und das Auf- und Zuklappen der Cases
 - `api/kontakt.js`: nimmt alle Formulare entgegen und schickt sie per Resend, optional zusätzlich als Kontakt in HubSpot
 
-Seiten: `/`, `/leistungen`, `/cases`, `/ai`, `/kontakt`, `/impressum`, `/datenschutz`, `/agb`, `/avv`, `/danke`, `/404`.
+Seiten: `/`, `/leistungen`, `/cases`, `/kontakt`, `/impressum`, `/datenschutz`, `/agb`, `/avv`, `/danke`, `/404`.
 
 ## Videos und Bilder einsetzen
 
@@ -30,6 +30,6 @@ Seiten: `/`, `/leistungen`, `/cases`, `/ai`, `/kontakt`, `/impressum`, `/datensc
 - Kundenzitate: Wortlaut und Namen nach Freigabe eintragen, die Platzhalter-Badges entfernen
 - Cases aus der früheren Agentur nur mit Zustimmung der Kunden zeigen
 - Calendly: aktuell ist das Profil `calendly.com/max-rev2` verlinkt, besser ein eigener Termintyp für Marketing
-- Revel-Link prüfen (aktuell `revel.at`)
+- AI-Content-Unterseite kommt später, wenn es Referenzen gibt (vorerst nur als Leistung unter /leistungen#ai)
 - Instagram-Link im Footer prüfen
 - OG-Bild `assets/og-rev2-marketing.jpg` (1200×630) anlegen

@@ -4,7 +4,8 @@
   "redirects": [
     { "source": "/referenzen", "destination": "/cases", "permanent": true },
     { "source": "/projekte", "destination": "/cases", "permanent": true },
-    { "source": "/ki", "destination": "/ai", "permanent": true },
+    { "source": "/ki", "destination": "/leistungen#ai", "permanent": false },
+    { "source": "/ai", "destination": "/leistungen#ai", "permanent": false },
     { "source": "/services", "destination": "/leistungen", "permanent": true },
     { "source": "/ueber-uns", "destination": "/#wir", "permanent": false }
   ],
