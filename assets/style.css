@@ -1099,28 +1099,28 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .revel .visuals .ph img { position: absolute; inset: 0; }
 .revel .visuals .ph::before { content: none; }
 
-/* Revel: Referenzlogos, 1:1 wie auf revel-swag.com (Manrope dort, hier DM Sans) */
-.client-proof { --rv-ink: #231811; --rv-line: rgba(35, 24, 17, .22); background: #f7f2e8; color: var(--rv-ink); padding: 0 32px; margin-top: clamp(40px, 6vw, 64px); }
-.client-proof-inner { border-top: 1px solid var(--rv-line); border-bottom: 1px solid var(--rv-line); display: grid; gap: 42px; grid-template-columns: 0.48fr 1.52fr; padding: 30px 0; align-items: center; }
-.client-proof-inner > p { font-size: 10px; font-weight: 800; letter-spacing: .1em; margin: 0; text-transform: uppercase; }
+/* Revel: Referenzlogos in Weiß, Aufbau wie auf revel-swag.com */
+.client-proof { margin-top: clamp(40px, 6vw, 64px); }
+.client-proof-inner { border-top: 1px solid #262626; display: grid; gap: 28px; grid-template-columns: 0.48fr 1.52fr; padding: 34px 0 6px; align-items: center; }
+.client-proof-inner > p { font-size: 11px; font-weight: 700; letter-spacing: .12em; margin: 0; text-transform: uppercase; color: #fff; }
 .client-proof-marks { align-items: center; display: grid; gap: 28px; grid-template-columns: repeat(5, 1fr); }
 .client-proof-logo { align-items: center; display: flex; justify-content: center; min-height: 72px; }
-.client-proof-logo img { filter: grayscale(1); max-height: 64px; max-width: 100%; mix-blend-mode: multiply; object-fit: contain; opacity: .8; transition: filter .2s, opacity .2s; width: auto; }
-.client-proof-logo img:hover { filter: grayscale(0); opacity: 1; }
+.client-proof-logo img { max-height: 56px; max-width: 100%; object-fit: contain; opacity: .78; transition: opacity .2s; width: auto; }
+.client-proof-logo img:hover { opacity: 1; }
 @media (max-width: 860px) {
-  .client-proof { padding: 0 20px; }
-  .client-proof-inner { gap: 22px; grid-template-columns: 1fr; }
-  .client-proof-marks { gap: 12px; grid-template-columns: repeat(2, 1fr); }
+  .client-proof-inner { gap: 18px; grid-template-columns: 1fr; padding-top: 28px; }
+  .client-proof-marks { gap: 10px 20px; grid-template-columns: repeat(2, 1fr); }
+  .client-proof-logo img { max-height: 46px; max-width: 130px; }
   .client-proof-logo:last-child { grid-column: 1 / -1; }
 }
 
 /* Hero mit Foto */
 .hero.mk-hero .hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
-@media (min-width: 980px) { .hero.mk-hero .hero-grid:not(.single) { grid-template-columns: 1.15fr 0.85fr; gap: 64px; } }
-.hero-photo { margin: 0; position: relative; max-width: 440px; justify-self: center; width: 100%; min-width: 0; }
-@media (min-width: 980px) { .hero-photo { justify-self: end; max-width: 460px; } }
-.hero-photo img { width: 100%; height: auto; max-height: 560px; object-fit: cover; border-radius: 12px; display: block; }
-.hero-photo .hero-hand { display: block; position: absolute; left: 10px; bottom: -18px; right: auto; top: auto; transform: rotate(-5deg); font-size: 26px; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
-.hero-photo .hero-hand svg { width: 44px; height: 28px; margin: 2px 0 0 22px; transform: rotate(10deg); }
-@media (min-width: 980px) { .hero-photo .hero-hand { left: -96px; bottom: 28px; font-size: 30px; } }
-@media (max-width: 599px) { .hero-photo { max-width: 100%; } .hero-photo .hero-hand { font-size: 24px; left: 8px; bottom: -14px; } }
+@media (min-width: 980px) { .hero.mk-hero .hero-grid:not(.single) { grid-template-columns: 1.3fr 0.7fr; gap: 64px; } }
+.hero-photo { margin: 0; position: relative; max-width: 300px; justify-self: center; width: 100%; min-width: 0; }
+@media (min-width: 980px) { .hero-photo { justify-self: end; max-width: 340px; margin-right: 24px; } }
+.hero-photo img { width: 100%; height: auto; max-height: 440px; object-fit: cover; border-radius: 12px; display: block; }
+.hero-photo .hero-hand { position: static; display: flex; align-items: flex-start; gap: 8px; margin: 12px 0 0 6px; font-size: 25px; line-height: 1; color: var(--mk); transform: none; }
+.hero-photo .hero-hand svg { width: 30px; height: 34px; flex: none; margin-top: -8px; }
+.hero-photo .hero-hand span { display: inline-block; transform: rotate(-3deg); padding-top: 10px; }
+@media (max-width: 599px) { .hero-photo { max-width: 280px; } }
