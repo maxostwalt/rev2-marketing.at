@@ -1095,16 +1095,32 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 @media (max-width: 599px) { .legal h1 { font-size: clamp(28px, 8.4vw, 40px); } .legal .block { min-width: 0; } }
 .case-grid, .ai-grid { grid-auto-flow: dense; }
 
-/* Revel: Fotos und Referenzlogos */
+/* Revel: Fotos */
 .revel .visuals .ph img { position: absolute; inset: 0; }
 .revel .visuals .ph::before { content: none; }
-.clients { margin-top: clamp(40px, 6vw, 64px); padding: 26px 28px; border-radius: var(--radius); background: #f3f0e7; color: #1a1a1a; display: grid; gap: 22px; align-items: center; }
-@media (min-width: 900px) { .clients { grid-template-columns: 200px 1fr; gap: 40px; } }
-.clients-lbl { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
-.clients ul { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 24px; align-items: center; justify-items: center; }
-@media (min-width: 700px) { .clients ul { grid-template-columns: repeat(5, 1fr); gap: 24px 32px; } }
-.clients li { display: grid; place-items: center; width: 100%; }
-.clients img { max-height: 64px; max-width: 160px; width: auto; height: auto; mix-blend-mode: multiply; }
-.clients li { min-width: 0; }
-.clients img { max-width: 100%; }
-@media (max-width: 699px) { .clients { padding: 22px 18px; } .clients ul { grid-template-columns: repeat(2, 1fr); gap: 18px 20px; } .clients img { max-height: 52px; max-width: 120px; } }
+
+/* Revel: Referenzlogos, 1:1 wie auf revel-swag.com (Manrope dort, hier DM Sans) */
+.client-proof { --rv-ink: #231811; --rv-line: rgba(35, 24, 17, .22); background: #f7f2e8; color: var(--rv-ink); padding: 0 32px; margin-top: clamp(40px, 6vw, 64px); }
+.client-proof-inner { border-top: 1px solid var(--rv-line); border-bottom: 1px solid var(--rv-line); display: grid; gap: 42px; grid-template-columns: 0.48fr 1.52fr; padding: 30px 0; align-items: center; }
+.client-proof-inner > p { font-size: 10px; font-weight: 800; letter-spacing: .1em; margin: 0; text-transform: uppercase; }
+.client-proof-marks { align-items: center; display: grid; gap: 28px; grid-template-columns: repeat(5, 1fr); }
+.client-proof-logo { align-items: center; display: flex; justify-content: center; min-height: 72px; }
+.client-proof-logo img { filter: grayscale(1); max-height: 64px; max-width: 100%; mix-blend-mode: multiply; object-fit: contain; opacity: .8; transition: filter .2s, opacity .2s; width: auto; }
+.client-proof-logo img:hover { filter: grayscale(0); opacity: 1; }
+@media (max-width: 860px) {
+  .client-proof { padding: 0 20px; }
+  .client-proof-inner { gap: 22px; grid-template-columns: 1fr; }
+  .client-proof-marks { gap: 12px; grid-template-columns: repeat(2, 1fr); }
+  .client-proof-logo:last-child { grid-column: 1 / -1; }
+}
+
+/* Hero mit Foto */
+.hero.mk-hero .hero-grid { display: grid; grid-template-columns: 1fr; gap: 36px; align-items: center; }
+@media (min-width: 980px) { .hero.mk-hero .hero-grid:not(.single) { grid-template-columns: 1.15fr 0.85fr; gap: 64px; } }
+.hero-photo { margin: 0; position: relative; max-width: 440px; justify-self: center; width: 100%; min-width: 0; }
+@media (min-width: 980px) { .hero-photo { justify-self: end; max-width: 460px; } }
+.hero-photo img { width: 100%; height: auto; max-height: 560px; object-fit: cover; border-radius: 12px; display: block; }
+.hero-photo .hero-hand { display: block; position: absolute; left: 10px; bottom: -18px; right: auto; top: auto; transform: rotate(-5deg); font-size: 26px; text-shadow: 0 2px 10px rgba(0,0,0,.5); }
+.hero-photo .hero-hand svg { width: 44px; height: 28px; margin: 2px 0 0 22px; transform: rotate(10deg); }
+@media (min-width: 980px) { .hero-photo .hero-hand { left: -96px; bottom: 28px; font-size: 30px; } }
+@media (max-width: 599px) { .hero-photo { max-width: 100%; } .hero-photo .hero-hand { font-size: 24px; left: 8px; bottom: -14px; } }
