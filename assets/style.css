@@ -1126,3 +1126,22 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .hero-photo .hero-hand svg { width: 30px; height: 34px; flex: none; margin-top: -8px; }
 .hero-photo .hero-hand span { display: inline-block; transform: rotate(-3deg); padding-top: 10px; }
 @media (max-width: 599px) { .hero-photo { max-width: 280px; } }
+
+/* ---------- Kleine Viewports (320 bis 375px): kein horizontales Scrollen ---------- */
+.legal .wrap { grid-template-columns: minmax(0, 1fr); }
+.legal .wrap > *, .legal .block > * { min-width: 0; }
+.legal h1, .legal h2 { overflow-wrap: anywhere; hyphens: auto; }
+@media (max-width: 400px) { .legal h1 { font-size: 30px; } .legal h2 { font-size: 20px; } }
+.choice span b { white-space: normal; }
+.form-side, .form-side > * { min-width: 0; }
+.hero { overflow-x: clip; }
+@media (max-width: 359px) {
+  .nav .wrap { gap: 10px; }
+  .nav-cta { gap: 6px; }
+  .nav-cta .btn-sm { padding: 0 11px; font-size: 13px; }
+  .burger { width: 40px; height: 40px; }
+  .brand small { display: none; }
+}
+.output { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 900px) { .output { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); } }
+.out, .flow, .out > * { min-width: 0; }
