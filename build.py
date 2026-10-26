@@ -173,7 +173,7 @@ def build():
         foot = FOOTER_SLIM if meta.get("footer") == "slim" else FOOTER_FULL
         html = (head(meta["title"], meta["desc"], path, ld) + header(meta.get("nav", "")) +
                 "\n<main>\n" + body + "\n</main>\n\n" + foot +
-                f'\n<script src="/assets/main.js?v={VERSION}" defer></script>\n</body>\n</html>\n')
+                f'\n<script src="/assets/main.js?v={VERSION}" defer></script>\n<script>window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};</script>\n<script defer src="/_vercel/insights/script.js"></script>\n</body>\n</html>\n')
         out.write_text(html, encoding="utf-8")
         if not meta.get("nosm"):
             pages.append(path)
