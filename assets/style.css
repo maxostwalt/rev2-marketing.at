@@ -1344,3 +1344,11 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 @media (max-width: 420px) {
   .bts .shotcard .cap, .bts .shotcard .cap.hand { font-size: 15px; }
 }
+
+/* HTML-Banner: Standbild sofort, Animation blendet ein, sobald geladen */
+.ad { background-color: #171717; background-position: center; background-size: cover; background-repeat: no-repeat; }
+.ad.sky { background-size: contain; }
+.ad iframe { opacity: 0; transition: opacity .15s linear; }
+.ad iframe.on { opacity: 1; }
+.work .ad, .reels .ad { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.work .ad.sky, .reels .ad.sky { background-size: contain; background-color: #171717; }

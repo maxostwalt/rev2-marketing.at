@@ -352,6 +352,10 @@
     if (el.classList.contains("sky")) box.style.top = Math.max(0, (r.height - h * s) / 2) + "px";
   }
   var ads = document.querySelectorAll(".ad[data-ad]");
+  var allAds = document.querySelectorAll(".ad");
+  allAds.forEach(fitAd);
+  if (window.ResizeObserver) { var ro0 = new ResizeObserver(function () { allAds.forEach(fitAd); }); allAds.forEach(function (el) { ro0.observe(el); }); }
+  else window.addEventListener("resize", function () { allAds.forEach(fitAd); });
   if (ads.length) {
     var adObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -360,16 +364,14 @@
           if (!box.querySelector("iframe")) {
             var f = document.createElement("iframe");
             f.src = el.getAttribute("data-ad"); f.title = el.getAttribute("aria-label") || "HTML-Banner";
-            f.setAttribute("sandbox", "allow-scripts allow-same-origin"); f.setAttribute("scrolling", "no"); f.setAttribute("tabindex", "-1"); f.loading = "lazy";
+            f.setAttribute("sandbox", "allow-scripts allow-same-origin"); f.setAttribute("scrolling", "no"); f.setAttribute("tabindex", "-1"); f.onload = function () { this.classList.add("on"); };
             box.appendChild(f);
           }
           fitAd(el); adObs.unobserve(el);
         }
       });
-    }, { rootMargin: "80px 0px" });
-    ads.forEach(function (el) { fitAd(el); adObs.observe(el); });
-    if (window.ResizeObserver) { var ro = new ResizeObserver(function () { ads.forEach(fitAd); }); ads.forEach(function (el) { ro.observe(el); }); }
-    else window.addEventListener("resize", function () { ads.forEach(fitAd); });
+    }, { rootMargin: "900px 0px" });
+    ads.forEach(function (el) { adObs.observe(el); });
   }
 
   /* Cases: „Mehr vom Case" ein- und ausklappen */
