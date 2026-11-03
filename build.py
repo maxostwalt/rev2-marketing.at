@@ -14,7 +14,7 @@ import re, pathlib, datetime
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src" / "pages"
-VERSION = "20"
+VERSION = "21"
 SITE = "https://rev2-marketing.at"
 
 ICON_BARS = '<svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -95,7 +95,7 @@ FOOTER_FULL = f'''<footer class="footer">
           <li>Ungargasse 9/9, 1030 Wien</li>
           <li><a href="mailto:max@rev2.at">max@rev2.at</a></li>
           <li><a href="tel:+436644138676">+43 664 4138676</a></li>
-          <li><a href="https://www.linkedin.com/company/rev2-innovations" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.linkedin.com/company/113154956" target="_blank" rel="noopener">LinkedIn</a></li>
           <li><a href="https://www.instagram.com/rev2.marketing" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
@@ -117,7 +117,7 @@ FOOTER_SLIM = '''<footer class="footer">
 </footer>'''
 
 
-def head(title, desc, path, ld=""):
+def head(title, desc, path, ld="", noindex=False):
     url = SITE + ("" if path == "/" else path)
     return f'''<!doctype html>
 <html lang="de-AT">
@@ -126,7 +126,7 @@ def head(title, desc, path, ld=""):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{url}">
+{'<meta name="robots" content="noindex">' + chr(10) if noindex else ''}<link rel="canonical" href="{url}">
 <meta property="og:site_name" content="Rev2 Marketing">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
@@ -170,7 +170,7 @@ def build():
         path = meta["path"]
         out = ROOT / ("index.html" if path == "/" else path.strip("/") + ".html")
         foot = FOOTER_SLIM if meta.get("footer") == "slim" else FOOTER_FULL
-        html = (head(meta["title"], meta["desc"], path, ld) + header(meta.get("nav", "")) +
+        html = (head(meta["title"], meta["desc"], path, ld, bool(meta.get("nosm"))) + header(meta.get("nav", "")) +
                 "\n<main>\n" + body + "\n</main>\n\n" + foot +
                 f'\n<script src="/assets/main.js?v={VERSION}" defer></script>\n<script>window.va = window.va || function () {{ (window.vaq = window.vaq || []).push(arguments); }};</script>\n<script defer src="/_vercel/insights/script.js"></script>\n</body>\n</html>\n')
         out.write_text(html, encoding="utf-8")

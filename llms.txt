@@ -1,11 +1,12 @@
 # Rev2 Marketing
 
-Rev2 Marketing ist die Agenturmarke der Rev2 Innovations GmbH (Wien). Content-Produktion, Social Media Management, Performance Marketing (Meta und Google Ads) und Employer Branding für Baufirmen, Immobilienunternehmen, Industrie und Mittelstand im DACH-Raum.
+Rev2 Marketing ist die Agenturmarke der Rev2 Innovations GmbH (Wien). Content-Produktion, Social Media Management, Fotografie, Employer Branding, Branding, Performance Marketing (Meta und Google Ads), AI Content sowie Web und E-Commerce für Bau, Immobilien, Industrie, Mobilität und Mittelstand im DACH-Raum.
+
+Ausgewählte Kunden und Arbeiten: vibe moves you, Traunfellner, Park Hyatt Vienna, Casinos Austria, KFC Österreich, von Köck, sehen!wutscher, Brajlovic.
 
 - Startseite: https://rev2-marketing.at/
 - Leistungen: https://rev2-marketing.at/leistungen
-- Cases und Videos: https://rev2-marketing.at/cases
-- AI Content: https://rev2-marketing.at/ai
+- Cases: https://rev2-marketing.at/cases
 - Kontakt: https://rev2-marketing.at/kontakt
 - Schwesterseite (Software, Automatisierung): https://rev2.at
 

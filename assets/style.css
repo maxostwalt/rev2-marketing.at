@@ -1331,3 +1331,16 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
   .reels .ad { border-radius: 8px; }
 }
 .case-head .client { margin: 4px 0 14px; }
+
+/* Go-live-Feinschliff */
+@media (max-width: 719px) {
+  .reels .vid .tag { font-size: 10px; line-height: 1.2; white-space: normal; overflow: visible; text-overflow: clip; }
+}
+@media (max-width: 899px) {
+  .cs.duo { grid-template-rows: auto auto; }
+  .cs.duo .cs-half { display: grid; grid-row: span 2; grid-template-rows: subgrid; gap: 14px; }
+  .cs.duo .cs-head small { min-height: 0; }
+}
+@media (max-width: 420px) {
+  .bts .shotcard .cap, .bts .shotcard .cap.hand { font-size: 15px; }
+}
