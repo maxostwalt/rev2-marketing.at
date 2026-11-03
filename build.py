@@ -95,8 +95,6 @@ FOOTER_FULL = f'''<footer class="footer">
           <li>Ungargasse 9/9, 1030 Wien</li>
           <li><a href="mailto:max@rev2.at">max@rev2.at</a></li>
           <li><a href="tel:+436644138676">+43 664 4138676</a></li>
-          <li><a href="https://www.linkedin.com/company/113154956" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://www.instagram.com/rev2.marketing" target="_blank" rel="noopener">Instagram</a></li>
         </ul>
       </div>
     </div>
