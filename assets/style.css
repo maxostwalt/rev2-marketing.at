@@ -1306,3 +1306,28 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .work .dcard { align-content: center; }
 .hero.mk-hero.slim h1 { font-size: clamp(32px, 4.4vw, 52px); max-width: 22ch; }
 .hero.mk-hero.slim + .band > .wrap { padding-top: clamp(40px, 5vw, 72px); }
+
+/* Kundenlogos frei: linksbündig, Beschreibung daneben */
+.case-head .client { flex-wrap: nowrap; }
+.case-head .client .cl-logo.bare { width: auto; display: block; flex: none; place-items: initial; }
+.case-head .client .cl-logo.bare img { max-width: none; max-height: none; height: 68px; width: auto; }
+.case-head .client small { line-height: 1.35; }
+@media (max-width: 599px) {
+  .case-head .client .cl-logo.bare img { height: 52px; }
+  .case-head .client small { font-size: 12.5px; }
+}
+
+/* Mobil: Hero-Foto kleiner, alle drei Kacheln oben nebeneinander */
+@media (max-width: 599px) {
+  .hero-photo { max-width: 190px; }
+  .hero-photo img { max-height: 250px; }
+  .hero-photo .hero-hand { font-size: 21px; }
+}
+@media (max-width: 719px) {
+  .reels { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .reels .reel { display: block; }
+  .reels .vid { border-radius: 8px; }
+  .reels .vid .tag { font-size: 9.5px; padding: 3px 6px; left: 6px; top: 6px; max-width: calc(100% - 12px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .reels .ad { border-radius: 8px; }
+}
+.case-head .client { margin: 4px 0 14px; }
