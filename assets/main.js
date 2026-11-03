@@ -360,7 +360,7 @@
           if (!box.querySelector("iframe")) {
             var f = document.createElement("iframe");
             f.src = el.getAttribute("data-ad"); f.title = el.getAttribute("aria-label") || "HTML-Banner";
-            f.setAttribute("sandbox", "allow-scripts"); f.setAttribute("scrolling", "no"); f.setAttribute("tabindex", "-1"); f.loading = "lazy";
+            f.setAttribute("sandbox", "allow-scripts allow-same-origin"); f.setAttribute("scrolling", "no"); f.setAttribute("tabindex", "-1"); f.loading = "lazy";
             box.appendChild(f);
           }
           fitAd(el); adObs.unobserve(el);
@@ -379,13 +379,14 @@
     var open = btn.querySelector("[data-open]"), close = btn.querySelector("[data-close]");
     btn.addEventListener("click", function () {
       var show = target.hidden;
+      var y0 = btn.getBoundingClientRect().top;
       target.hidden = !show;
+      if (!show) { var dy = btn.getBoundingClientRect().top - y0; if (dy) window.scrollBy(0, dy); }
       btn.setAttribute("aria-expanded", show ? "true" : "false");
       if (open) open.hidden = show; if (close) close.hidden = !show;
       if (show) {
         target.querySelectorAll(".rv").forEach(function (el) { el.classList.add("in"); });
         target.querySelectorAll(".ad[data-ad]").forEach(fitAd);
-        setTimeout(function () { target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); }, 30);
       }
     });
   });
