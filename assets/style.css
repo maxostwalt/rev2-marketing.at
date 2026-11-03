@@ -1253,3 +1253,23 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 /* Kundenstimmen direkt unter dem Case, ohne großen Abstand */
 .case-band > .wrap { padding-bottom: clamp(40px, 5vw, 64px); }
 .quote-band > .wrap { padding-block: clamp(48px, 6vw, 80px); }
+
+/* Startseite oben: zwei Loops und ein HTML-Banner */
+.reels .vid.autoloop video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.reels .ad { position: relative; overflow: hidden; margin: 0; aspect-ratio: 9 / 16; border-radius: 12px; background: #171717; border: 1px solid var(--line-dark); }
+.reels .ad .ad-box { position: absolute; left: 50%; top: 0; transform-origin: 50% 0; }
+.reels .ad iframe { display: block; border: 0; width: 100%; height: 100%; }
+
+/* Cases: zwei Kunden in einer Zeile */
+.cs.duo { grid-template-columns: 1fr 1fr; gap: 16px; }
+.cs-half { display: grid; gap: 14px; align-content: start; }
+.cs-reels.one { grid-template-columns: 1fr; }
+@media (max-width: 899px) {
+  .cs.duo .cs-logo { width: 100%; max-width: 160px; height: 60px; }
+  .cs.duo .cs-head h3 { font-size: 18px; }
+  .cs.duo .cs-head small { font-size: 13px; min-height: 2.9em; }
+}
+@media (min-width: 900px) {
+  .cs.duo { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .cs-half { grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+}
