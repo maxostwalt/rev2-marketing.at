@@ -324,9 +324,12 @@
     play.addEventListener("click", function () {
       v.classList.add("playing");
       if (src) {
+        /* andere laufende Videos anhalten */
+        document.querySelectorAll(".vid.playing video").forEach(function (o) { o.pause(); });
         var vid = document.createElement("video");
-        vid.src = src; vid.controls = true; vid.autoplay = true; vid.playsInline = true;
+        vid.src = src; vid.controls = true; vid.autoplay = true; vid.playsInline = true; vid.preload = "auto";
         var poster = v.querySelector("img.poster"); if (poster) vid.poster = poster.src;
+        vid.addEventListener("ended", function () { v.classList.remove("playing"); vid.remove(); });
         v.appendChild(vid); vid.play().catch(function () {});
       } else {
         var f = document.createElement("iframe");
@@ -336,6 +339,38 @@
       }
     });
   });
+
+  /* HTML-Banner: eigene Werbemittel als iframe, skaliert auf die Kachelbreite, laden erst beim Scrollen in den Sichtbereich */
+  function fitAd(el) {
+    var box = el.querySelector(".ad-box"); if (!box) return;
+    var w = +el.getAttribute("data-w") || 970, h = +el.getAttribute("data-h") || 250;
+    var r = el.getBoundingClientRect();
+    if (!r.width) return;
+    var s = el.classList.contains("sky") ? Math.min(r.height / h, r.width / w) : r.width / w;
+    box.style.width = w + "px"; box.style.height = h + "px";
+    box.style.transform = (el.classList.contains("sky") ? "translateX(-50%) " : "") + "scale(" + s + ")";
+    if (el.classList.contains("sky")) box.style.top = Math.max(0, (r.height - h * s) / 2) + "px";
+  }
+  var ads = document.querySelectorAll(".ad[data-ad]");
+  if (ads.length) {
+    var adObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var el = e.target, box = el.querySelector(".ad-box");
+        if (e.isIntersecting) {
+          if (!box.querySelector("iframe")) {
+            var f = document.createElement("iframe");
+            f.src = el.getAttribute("data-ad"); f.title = el.getAttribute("aria-label") || "HTML-Banner";
+            f.setAttribute("sandbox", "allow-scripts"); f.setAttribute("scrolling", "no"); f.setAttribute("tabindex", "-1"); f.loading = "lazy";
+            box.appendChild(f);
+          }
+          fitAd(el); adObs.unobserve(el);
+        }
+      });
+    }, { rootMargin: "80px 0px" });
+    ads.forEach(function (el) { fitAd(el); adObs.observe(el); });
+    if (window.ResizeObserver) { var ro = new ResizeObserver(function () { ads.forEach(fitAd); }); ads.forEach(function (el) { ro.observe(el); }); }
+    else window.addEventListener("resize", function () { ads.forEach(fitAd); });
+  }
 
   /* Cases: „Mehr vom Case" ein- und ausklappen */
   document.querySelectorAll("[data-more]").forEach(function (btn) {
@@ -349,6 +384,7 @@
       if (open) open.hidden = show; if (close) close.hidden = !show;
       if (show) {
         target.querySelectorAll(".rv").forEach(function (el) { el.classList.add("in"); });
+        target.querySelectorAll(".ad[data-ad]").forEach(fitAd);
         setTimeout(function () { target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "nearest" }); }, 30);
       }
     });
