@@ -31,6 +31,16 @@
       "source": "/ueber-uns",
       "destination": "/#wir",
       "permanent": false
+    },
+    {
+      "source": "/agb",
+      "destination": "/impressum",
+      "permanent": false
+    },
+    {
+      "source": "/avv",
+      "destination": "/impressum",
+      "permanent": false
     }
   ],
   "headers": [

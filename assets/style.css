@@ -1213,3 +1213,43 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .quote .who { grid-template-columns: 1fr; }
 .case-head .client .cl-logo { height: auto; padding: 8px 12px; }
 .case-head .client .cl-logo img { display: block; height: 52px; width: auto; }
+
+/* Cases-Seite: ein Kunde pro Zeile, Logo links, drei Kacheln rechts */
+.cslist { display: grid; gap: clamp(28px, 4vw, 44px); }
+.cs { display: grid; gap: 16px; padding-top: clamp(24px, 3vw, 36px); border-top: 1px solid var(--line-light); }
+.cs:first-child { border-top: 0; padding-top: 0; }
+.cs-head { display: grid; gap: 6px; align-content: start; }
+.cs-head h3 { font-size: 22px; letter-spacing: -0.01em; }
+.cs-head small { font-size: 14px; font-weight: 600; }
+.cs-logo { display: inline-flex; align-items: center; justify-content: center; width: 160px; height: 72px; padding: 10px 16px; border: 1px solid var(--line-light); border-radius: 10px; background: #fff; margin-bottom: 8px; overflow: hidden; }
+.cs-logo img { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; }
+.cs-logo.dark { padding: 0; }
+.cs-logo.dark img { width: 100%; height: 100%; object-fit: cover; }
+.cs-reels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cs-reels .vid, .cs-reels .ph { margin: 0; aspect-ratio: 9 / 16; border-radius: 12px; }
+.cs-reels .ph { position: relative; overflow: hidden; background: #111419; border: 1px solid var(--line-light); }
+.cs-reels .ph::before { display: none; }
+.cs-reels .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cs-reels .ph .tag { position: absolute; left: 12px; top: 12px; font-size: 12.5px; font-weight: 600; padding: 6px 10px; border-radius: 999px; background: rgba(10, 12, 18, 0.72); color: #fff; z-index: 2; }
+.cs-reels .ph .cap, .cs-reels .vid .cap { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 12px 14px; font-size: 13px; font-weight: 600; color: #fff; background: linear-gradient(to top, rgba(10, 12, 18, 0.8), transparent); z-index: 2; }
+.cs-reels .vid.playing .cap { display: none; }
+@media (max-width: 759px) {
+  .cs-reels { gap: 8px; }
+  .cs-reels .ph .cap, .cs-reels .vid .cap { display: none; }
+  .cs-reels .ph .tag, .cs-reels .vid .tag { font-size: 11px; padding: 4px 8px; left: 8px; top: 8px; }
+  .cs-reels .vid .play { width: 44px; height: 44px; }
+}
+@media (min-width: 900px) {
+  .cs { grid-template-columns: 240px 1fr; gap: 40px; align-items: start; }
+  .cs-reels { gap: 16px; }
+}
+.more-note { display: grid; gap: 20px; padding: clamp(24px, 4vw, 40px); border-radius: var(--radius); background: var(--ink); color: #fff; }
+.band.light .more-note .note-hand.mk, .more-note .note-hand { font-size: 30px; color: var(--mk); display: block; margin-bottom: 10px; }
+.more-note p { font-size: 16.5px; line-height: 1.6; max-width: 56ch; }
+.more-note .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+.band.light .more-note .btn-ghost, .more-note .btn-ghost { color: #fff; border-color: #4a4f5e; }
+.fineprint { font-size: 13px; line-height: 1.5; max-width: 70ch; margin-top: clamp(28px, 4vw, 44px); padding-top: 16px; border-top: 1px solid var(--line-light); }
+
+/* Kundenstimmen direkt unter dem Case, ohne großen Abstand */
+.case-band > .wrap { padding-bottom: clamp(40px, 5vw, 64px); }
+.quote-band > .wrap { padding-block: clamp(48px, 6vw, 80px); }

@@ -14,7 +14,7 @@ import re, pathlib, datetime
 
 ROOT = pathlib.Path(__file__).parent
 SRC = ROOT / "src" / "pages"
-VERSION = "16"
+VERSION = "17"
 SITE = "https://rev2-marketing.at"
 
 ICON_BARS = '<svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>'
@@ -86,7 +86,6 @@ FOOTER_FULL = f'''<footer class="footer">
           <li><a href="https://rev2.at" target="_blank" rel="noopener">rev2.at, Software und Automatisierung</a></li>
           <li><a href="/impressum">Impressum</a></li>
           <li><a href="/datenschutz">Datenschutz</a></li>
-          <li><a href="/agb">AGB</a></li>
         </ul>
       </div>
       <div>
@@ -103,7 +102,7 @@ FOOTER_FULL = f'''<footer class="footer">
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Rev2 Innovations GmbH</span>
-      <span><a href="/impressum">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz">Datenschutz</a> &nbsp;·&nbsp; <a href="/agb">AGB</a> &nbsp;·&nbsp; <a href="/avv">AVV</a></span>
+      <span><a href="/impressum">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz">Datenschutz</a></span>
     </div>
   </div>
 </footer>'''
@@ -112,7 +111,7 @@ FOOTER_SLIM = '''<footer class="footer">
   <div class="wrap">
     <div class="footer-bottom" style="border-top:0;padding-top:0">
       <span>© <span data-year>2026</span> Rev2 Innovations GmbH</span>
-      <span><a href="/impressum">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz">Datenschutz</a> &nbsp;·&nbsp; <a href="/agb">AGB</a> &nbsp;·&nbsp; <a href="/avv">AVV</a></span>
+      <span><a href="/impressum">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz">Datenschutz</a></span>
     </div>
   </div>
 </footer>'''
