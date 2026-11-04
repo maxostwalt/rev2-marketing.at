@@ -1369,3 +1369,25 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 
 /* Banner oben: Kachel im Bannerformat 1:2, gleiche Höhe wie die Videos, keine Balken */
 .reels .ad.sky { aspect-ratio: 1 / 2; width: 88.9%; justify-self: center; background-color: transparent; }
+
+/* vibe aufgeklappt: Reihen nach Format */
+#vibe-more { gap: 14px; }
+#vibe-more .wide-ad { position: relative; overflow: hidden; margin: 0; border-radius: 12px; aspect-ratio: 970 / 250; border: 1px solid var(--line-dark); background-color: #171717; background-size: cover; background-position: center; }
+#vibe-more .wide-ad .ad-box { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+#vibe-more .wide-ad iframe { display: block; border: 0; width: 100%; height: 100%; }
+#vibe-more .row-reels, #vibe-more .row-posts, #vibe-more .row-wide { display: grid; gap: 14px; }
+#vibe-more .row-reels { grid-template-columns: repeat(2, 1fr); }
+#vibe-more .row-posts { grid-template-columns: repeat(2, 1fr); }
+#vibe-more .row-wide { grid-template-columns: 1fr; }
+#vibe-more .vid, #vibe-more .ph { margin: 0; border-radius: 12px; }
+#vibe-more .vid { aspect-ratio: 9 / 16; }
+#vibe-more .ph { position: relative; overflow: hidden; background: #111419; border: 1px solid var(--line-dark); }
+#vibe-more .ph::before { display: none; }
+#vibe-more .ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+#vibe-more .row-posts .ph { aspect-ratio: 4 / 5; }
+#vibe-more .row-posts .ph.story img { object-position: 50% 12%; }
+#vibe-more .row-wide .ph { aspect-ratio: 5 / 3; }
+#vibe-more .vid .cap { font-size: 12.5px; padding: 10px 12px; }
+@media (min-width: 640px) { #vibe-more .row-reels { grid-template-columns: repeat(3, 1fr); } #vibe-more .row-wide { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 760px) { #vibe-more .row-posts { grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 1000px) { #vibe-more .row-reels { grid-template-columns: repeat(6, 1fr); } #vibe-more, #vibe-more .row-reels, #vibe-more .row-posts, #vibe-more .row-wide { gap: 16px; } }
