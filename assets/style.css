@@ -1366,3 +1366,6 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .reels-band > .wrap { padding-block: clamp(28px, 4vw, 48px) clamp(16px, 2vw, 24px); }
 .reels-band + #wir > .wrap { padding-top: clamp(40px, 6vw, 72px); }
 .band.dark .case-head .client .cl-logo.bare, .band.dark-2 .case-head .client .cl-logo.bare { background: transparent; border: 0; }
+
+/* Banner oben: Kachel im Bannerformat 1:2, gleiche Höhe wie die Videos, keine Balken */
+.reels .ad.sky { aspect-ratio: 1 / 2; width: 88.9%; justify-self: center; background-color: transparent; }
