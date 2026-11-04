@@ -1366,3 +1366,9 @@ h1 .ul::after, .h2 .ul::after { height: 0.26em; bottom: -0.02em; }
 .reels-band > .wrap { padding-block: clamp(28px, 4vw, 48px) clamp(16px, 2vw, 24px); }
 .reels-band + #wir > .wrap { padding-top: clamp(40px, 6vw, 72px); }
 .band.dark .case-head .client .cl-logo.bare, .band.dark-2 .case-head .client .cl-logo.bare { background: transparent; border: 0; }
+
+/* Header: feines Raster aus Hochformat-Rahmen, läuft nach links aus */
+.hero.mk-hero { position: relative; }
+.hero.mk-hero::before { content: ""; position: absolute; inset: 0; background: url("/assets/hero-frames.svg") right center / auto 100% no-repeat; -webkit-mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,.85) 35%, transparent 80%); mask-image: linear-gradient(to left, #000 0%, rgba(0,0,0,.85) 35%, transparent 80%); pointer-events: none; z-index: 0; }
+.hero.mk-hero > .wrap { position: relative; z-index: 1; }
+@media (max-width: 899px) { .hero.mk-hero::before { background-size: auto 620px; background-position: right top; background-repeat: repeat-y; -webkit-mask-image: linear-gradient(to left, #000 0%, transparent 75%); mask-image: linear-gradient(to left, #000 0%, transparent 75%); opacity: .8; } }
